@@ -1,7 +1,7 @@
 <?php
 
 // Sandeep's MVC
-$base_url='http://localhost/CarInventrySystem/';
+$base_url='https://sandeepv548.github.io/carinventorysystem/';
 define('_BASE_URL_', $base_url);
 define('_BASE_DIR_',__DIR__);
 
