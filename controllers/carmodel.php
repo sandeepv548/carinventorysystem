@@ -21,8 +21,8 @@ class CarModel extends Controller {
             $fileerror[] = 'images are required';
         } else {
             //echo count($_FILES['car_imgs']['name']); die;
-            if (count($_FILES['car_imgs']['name'])>2) {
-                $fileerror[] = 'max 2 images are required';
+            if (count($_FILES['car_imgs']['name'])!=2) {
+                $fileerror[] = 'min & max 2 images are allowed';
             }
         }
         $validation = array(
