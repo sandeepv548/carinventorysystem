@@ -1,7 +1,7 @@
 <?php
 
 // Sandeep's MVC
-$base_url='https://sandeepv548.github.io/carinventorysystem/';
+$base_url='http://localhost/carinventorysystem/';
 define('_BASE_URL_', $base_url);
 define('_BASE_DIR_',__DIR__);
 
@@ -12,7 +12,7 @@ foreach ($includes as $rootDir) {
         if (file_exists($filePath)) {
             require $filePath;
         }else{
-            throw new Exception($filePath." file does'nt exists");
+            throw new Exception($filePath." file doesn't exists");
         }
     }
 } 

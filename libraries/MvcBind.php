@@ -21,7 +21,7 @@ class MvcBind {
         if(file_exists($contrFile)){
              require $contrFile;
         }else{
-            throw new Exception($controller." controller does'nt exists.");
+            throw new Exception($controller." controller doesn't exists.");
         }
        
         $controllerObj = new $controller;
