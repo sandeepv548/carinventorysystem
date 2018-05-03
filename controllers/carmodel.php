@@ -9,7 +9,7 @@ class CarModel extends Controller {
     }
 
     public function index($id = FALSE) {
-        require 'Manufacturer.php';
+        require 'manufacturer.php';
         $allManufact = Manufacturer::getManufacturer();
         $this->view->allManufact = $allManufact;
         $this->view->render('addcarmodel', $allManufact);
