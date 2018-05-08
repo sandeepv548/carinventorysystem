@@ -38,14 +38,14 @@ class CarModel extends Controller {
             'car_color' => getValue('car_color'),
             'car_note' => getValue('note'),
             'manufacturing_year' => getValue('manufacturing_year'),
-            'car_regis_number' => getValue('car_registration_number')
+            'car_regis_number' => strtoupper(getValue('car_registration_number'))
         );
         $valierror = formValidation($validation);
         $error = array_merge($valierror, $fileerror);
         if (empty($error)) {
             $insertid = Db::insert(self::$table, $insertmodel);
             if ($insertid) {
-                $uploadMsg = mulFileUpload('car_imgs', 'assets/images/car_images/' . $insertid . '/', 500, array('.jpg,.png,.jpeg', '.JPG', '.PNG'));
+                $uploadMsg = mulFileUpload('car_imgs', 'assets/images/car_images/' . $insertid . '/', FALSE, array('.jpg,.png,.jpeg', '.JPG', '.PNG'));
                 echo response(200, 'Car model added successfully');
             } else {
                 echo response(300, 'Something went wrong');
